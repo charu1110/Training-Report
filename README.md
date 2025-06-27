@@ -79,9 +79,6 @@ Today, I explored how to handle Excel and CSV files in Google Colab for data ana
 #### 📸 Screenshots:
 - Colab notebook screenshots demonstrating file upload, reading, and data processing are saved in today’s folder
 
----
-Would you like it shorter, more detailed, or any part written differently? 😊
-
 
 
 
