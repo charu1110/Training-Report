@@ -48,3 +48,46 @@ Pandas is a powerful Python library for working with datasets. I also revised an
 
 #### 📸 Screenshots:
 - Colab outputs and terminal screenshots saved with today’s code
+
+### 📅 Day 3 – 26 June 2025  
+**Topic:** Working with Excel and CSV Files in Google Colab
+
+Today, I explored how to handle Excel and CSV files in Google Colab for data analysis. I learned to upload files directly into Colab and perform various operations using Pandas.
+
+#### 🔹 Work Done:
+- Learned how to upload Excel and CSV files into Colab
+- Used `files.upload()` from `google.colab` to bring files into the environment
+- Read Excel files using Pandas with `read_excel()` and CSV files using `read_csv()`
+- Explored operations like:
+  - Viewing data using `df.head()`
+  - Checking columns and data types
+  - Filtering rows based on conditions
+  - Saving modified data back to CSV or Excel formats
+- Practiced downloading processed files from Colab to the local machine
+
+#### ✅ Programs Implemented:
+- Uploaded an Excel file and converted it to CSV  
+- Loaded CSV data into Pandas DataFrame  
+- Filtered and summarized data based on conditions  
+- Saved DataFrame back into CSV for download
+
+#### 🧠 Learnings:
+- Understood differences between Excel (.xlsx) and CSV (.csv) formats
+- Gained practical skills in handling external data sources in Colab
+- Built confidence in reading, manipulating, and saving datasets in different formats
+
+#### 📸 Screenshots:
+- Colab notebook screenshots demonstrating file upload, reading, and data processing are saved in today’s folder
+
+---
+Would you like it shorter, more detailed, or any part written differently? 😊
+
+
+
+
+
+
+
+
+
+
