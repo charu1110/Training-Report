@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Training Portal | Charu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="logo.png" alt="Logo" />
+        <h1>TR-102</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><button id="homeBtn">🏠 Dashboard</button></li>
+          <li><button id="certificateBtn">🎓 Certificate</button></li>
+          <li><button id="projectBtn">📁 Project</button></li>
+          <li><button id="toggleThemeBtn">🌙 Theme</button></li>
+        </ul>
+      </nav>
+      <footer>
+        <small>© 2025 Charu</small>
+      </footer>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Header -->
+      <header class="top-header">
+        <h2>Guru Nanak Dev Engineering College, Ludhiana</h2>
+        <p>4 Weeks Training at <strong>A2IT InternEdge, Mohali</strong></p>
+        <div class="user-info">
+          <span><strong>CHARU</strong></span> | URN: 2302502
+        </div>
+      </header>
+
+      <!-- Progress Bar -->
+      <section class="progress-section">
+        <label>Training Progress:</label>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <span id="progressText">0 / 30 Days Completed</span>
+      </section>
+
+      <!-- Search Bar -->
+      <section class="search-section">
+        <input type="text" id="searchDays" placeholder="Search Day..." />
+      </section>
+
+      <!-- Day Buttons -->
+      <section class="days-grid" id="daysGrid">
+        <!-- JS will generate Day cards -->
+      </section>
+
+      <!-- Daily Report Modal -->
+     <div class="modal" id="reportModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h3 id="modalDayTitle">Day Report</h3>
+
+    <textarea id="reportTextarea" rows="10" placeholder="Write your daily summary here..."></textarea>
+    
+    <label for="reportLink">Attach Report PDF Link:</label>
+    <input type="text" id="reportLink" placeholder="https://...">
+
+    <a id="viewReportBtn" href="#" target="_blank" class="modal-link-btn" style="display: none;">
+      📄 View Attached PDF
+    </a>
+
+    <div class="modal-actions">
+      <button id="saveReportBtn">✅ Save</button>
+      <button id="downloadPdfBtn">📄 Download PDF</button>
+    </div>
+  </div>
+</div>
+
+
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
