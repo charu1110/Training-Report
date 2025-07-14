@@ -79,6 +79,59 @@ Today, I explored how to handle Excel and CSV files in Google Colab for data ana
 #### 📸 Screenshots:
 - Colab notebook screenshots demonstrating file upload, reading, and data processing are saved in today’s folder
 
+### 📅 Day 4 – 27 June 2025  
+**Topic:** Machine Learning Basics, Pandas Functions, and Regression Model on California Housing Dataset  
+
+On Day 4, I learned the basics of Machine Learning and explored practical examples in Python using Pandas and scikit-learn. I also practiced building a Multiple Linear Regression model on the California Housing dataset.
+
+---
+
+#### 🔹 Work Done:
+
+✅ **Machine Learning Basics**  
+- Understood what Machine Learning is and why it’s useful  
+- Learned main types of Machine Learning:
+  - **Supervised Learning** → works with labeled data (regression, classification)
+  - **Unsupervised Learning** → finds patterns in unlabeled data (clustering, dimensionality reduction)
+  - **Reinforcement Learning** → learns by rewards and penalties
+
+---
+
+✅ **Pandas Library & Useful Functions**  
+Practiced essential Pandas functions:
+- `head()` and `tail()` → view rows
+- `shape` → check rows & columns count
+- `info()` → check data types & null values
+- `describe()` → summary statistics
+- Filtering rows with conditions
+- Adding or dropping columns
+- Grouping and summarizing data
+
+---
+
+✅ **Regression Example on California Housing Dataset**  
+- Used scikit-learn’s California Housing data to practice regression  
+- Learned how to:
+  - Load built-in datasets using scikit-learn
+  - Convert data into Pandas DataFrame
+  - Split data into train and test sets
+  - Create and train a Multiple Linear Regression model
+  - Evaluate model performance using:
+    - Mean Squared Error (MSE)
+    - R² Score
+  - Save the trained model using `joblib`
+
+**Code saved in files for reference.**
+
+---
+
+#### 🧠 Learnings:
+- Understood how machine learning models are trained and tested
+- Gained practical experience in building regression models
+- Improved confidence in using Pandas for data analysis
+- Understood the process of saving and reusing machine learning models
+
+
 
 
 
