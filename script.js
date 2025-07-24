@@ -13,12 +13,76 @@ Python is a beginner-friendly, high-level language widely used in AI, data scien
     2: {
       text: "TOPIC : Pyhton loops and basic programs .",
       pdfLink: "day2Training.pdf"
+    },
+    3: {
+      text: "On Day 3 of our training, we delved into the basics of Artificial Intelligence (AI) and Machine Learning (ML), and worked hands-on with real-world datasets using the Pandas library in Google Colab. We also explored Kaggle.com, a collaborative platform for data science enthusiasts, and practiced on the World Happiness Report (2018–2019) dataset.",
+      pdfLink: "day3.pdf"
     }
-    // 3: {
-    //   text: "My Day 3 notes...",
-    //   pdfLink: "https://example.com/day3.pdf"
-    // }
-  
+  ,
+  4: {
+      text: "Today’s session introduced us to the core principles of Machine Learning, along with hands-on experience of building a simple regression model using the California Housing Dataset. We explored how Pandas, NumPy, and Scikit-learn work together to help us prepare, train, and evaluate models efficiently.",
+      pdfLink: "day4Training.pdf"
+    },
+    5: {
+      text: "Today’s session was quite interesting as we stepped into the world of classification problems in machine learning. Unlike previous regression tasks where we were predicting continuous values, here the focus was on predicting categories or labels.",
+      pdfLink: "day5Training.pdf"
+    },
+    6: {
+      text: "Today, we continued exploring Logistic Regression, but this time instead of using preloaded datasets, we imported the Iris dataset from a CSV file using pandas. This gave a much more realistic feeling — just like working on a real-world project!",
+      pdfLink: "day6Training.pdf"
+    },
+    7: {
+      text: "On Day 7, we explored two widely used classification techniques in machine learning — K-Nearest Neighbors (KNN) and Support Vector Machine (SVM). We implemented, tuned, and evaluated both models using the well-known Iris flower dataset, leveraging powerful tools from the scikit-learn library. Visualization and error metrics were used for detailed comparison..",
+      pdfLink: "day7Training.pdf"
+    },
+    8: {
+      
+      pdfLink: "day8Training.pdf"
+    },
+    9: {
+      
+      pdfLink: "day9Training.pdf"
+    },
+    10: {
+      
+      pdfLink: "day10Training.pdf"
+    },
+    11: {
+     
+      pdfLink: "day11Training.pdf"
+    },
+    12: {
+      
+      pdfLink: "day12Training.pdf"
+    },
+    13: {
+      
+      pdfLink: "day13Training.pdf"
+    },
+    14: {
+      
+      pdfLink: "day14Training.pdf"
+    },
+    15: {
+      
+      pdfLink: "day15Training.pdf"
+    },
+    16: {
+      
+      pdfLink: "day16Training.pdf"
+    },
+    17: {
+      
+      pdfLink: "day17Training.pdf"
+    },
+    18: {
+      
+      pdfLink: "day18Training.pdf"
+    },
+    19: {
+      
+      pdfLink: "day19Training.pdf"
+    }
   };
 
   const daysContainer = document.getElementById("daysGrid");
