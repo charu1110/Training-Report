@@ -214,12 +214,12 @@ Python is a beginner-friendly, high-level language widely used in AI, data scien
 
   function updateProgress() {
     let completed = 0;
-    for (let i = 1; i <= 30; i++) {
+    for (let i = 1; i <= 21; i++) {
       if (localStorage.getItem(`report_day_${i}`) || reports[i]) {
         completed++;
       }
     }
-    const percent = (completed / 30) * 100;
+    const percent = (completed /21) * 100;
     progressBar.style.width = `${percent}%`;
     progressText.textContent = `${completed} / 30 Days Completed`;
   }
