@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     20: { pdfLink: "day20Training.pdf" }, 21: { pdfLink: "day21Training.pdf" }
   };
 
+  // ✅ HARD CODED CERTIFICATE AND FINAL REPORT LINKS
+  const certificateLinkFixed = "https://your-certificate-link.pdf";
+  const finalReportLinkFixed = "finalReport.pdf";
+
   // DOM Elements
   const daysContainer = document.getElementById("daysGrid");
   const modal = document.getElementById("reportModal");
@@ -23,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const reportTextarea = document.getElementById("reportTextarea");
   const reportLinkInput = document.getElementById("reportLink");
   const viewReportBtn = document.getElementById("viewReportBtn");
-  const saveReportBtn = document.getElementById("saveReportBtn");
   const downloadPdfBtn = document.getElementById("downloadPdfBtn");
   const modalDayTitle = document.getElementById("modalDayTitle");
   const progressBar = document.getElementById("progressBar");
@@ -31,20 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchDays");
   const toggleThemeBtn = document.getElementById("toggleThemeBtn");
 
-  // Certificate & Final Report Modals
   const certificateBtn = document.getElementById("certificateBtn");
-  const certificateModal = document.getElementById("certificateModal");
-  const closeCertificate = document.getElementById("closeCertificate");
-  const certificateLink = document.getElementById("certificateLink");
-  const saveCertificateBtn = document.getElementById("saveCertificateBtn");
-  const viewCertificateBtn = document.getElementById("viewCertificateBtn");
-
   const finalReportBtn = document.getElementById("finalReportBtn");
-  const finalReportModal = document.getElementById("finalReportModal");
-  const closeFinalReport = document.getElementById("closeFinalReport");
-  const finalReportLink = document.getElementById("finalReportLink");
-  const saveFinalReportBtn = document.getElementById("saveFinalReportBtn");
-  const viewFinalReportBtn = document.getElementById("viewFinalReportBtn");
 
   let currentDay = null;
 
@@ -58,8 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dayTitle.textContent = `Day ${i}`;
 
     const dayStatus = document.createElement("p");
-    const reportKey = `report_day_${i}`;
-    if (localStorage.getItem(reportKey) || reports[i]) {
+    if (reports[i]) {
       dayStatus.textContent = "✅ Completed";
       dayCard.classList.add("completed");
     } else {
@@ -74,33 +64,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateProgress();
 
-  // === Day Report Modal ===
+  // === Day Report Modal (READ-ONLY) ===
   function openModal(day) {
     currentDay = day;
     modalDayTitle.textContent = `Day ${day} Report`;
-    reportTextarea.value = localStorage.getItem(`report_day_${day}`) || reports[day]?.text || "";
-    reportLinkInput.value = localStorage.getItem(`report_link_day_${day}`) || reports[day]?.pdfLink || "";
 
-    viewReportBtn.style.display = reportLinkInput.value ? "inline-block" : "none";
-    viewReportBtn.href = reportLinkInput.value;
+    // Set text & make read-only
+    reportTextarea.value = reports[day]?.text || "No report available.";
+    reportTextarea.readOnly = true;
+
+    // Set PDF link & read-only input
+    reportLinkInput.value = reports[day]?.pdfLink || "";
+    reportLinkInput.readOnly = true;
+
+    // Show PDF button if link available
+    if (reports[day]?.pdfLink) {
+      viewReportBtn.style.display = "inline-block";
+      viewReportBtn.href = reports[day].pdfLink;
+    } else {
+      viewReportBtn.style.display = "none";
+    }
+
     modal.style.display = "flex";
   }
 
   closeModalBtn.addEventListener("click", () => modal.style.display = "none");
 
-  saveReportBtn.addEventListener("click", () => {
-    if (currentDay) {
-      localStorage.setItem(`report_day_${currentDay}`, reportTextarea.value.trim());
-      localStorage.setItem(`report_link_day_${currentDay}`, reportLinkInput.value.trim());
-      viewReportBtn.style.display = reportLinkInput.value.trim() ? "inline-block" : "none";
-      viewReportBtn.href = reportLinkInput.value.trim();
-      document.querySelector(`.day-card[data-day='${currentDay}'] p`).textContent =
-        reportTextarea.value.trim() ? "✅ Completed" : "🕒 Not Completed";
-      updateProgress();
-      modal.style.display = "none";
-    }
+  // === Certificate Button (Direct Link) ===
+  certificateBtn.addEventListener("click", () => {
+    window.open(certificateLinkFixed, "_blank"); // Direct open
   });
 
+  // === Final Report Button (Direct Link) ===
+  finalReportBtn.addEventListener("click", () => {
+    window.open(finalReportLinkFixed, "_blank"); // Direct open
+  });
+
+  // Download PDF of Day Report
   downloadPdfBtn.addEventListener("click", () => {
     if (currentDay) {
       const text = reportTextarea.value.trim();
@@ -117,48 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === Certificate Modal ===
-  certificateBtn.addEventListener("click", () => {
-    certificateLink.value = localStorage.getItem("certificate_link") || "";
-    viewCertificateBtn.style.display = certificateLink.value ? "inline-block" : "none";
-    viewCertificateBtn.href = certificateLink.value;
-    certificateModal.style.display = "flex";
-  });
-
-  saveCertificateBtn.addEventListener("click", () => {
-    localStorage.setItem("certificate_link", certificateLink.value.trim());
-    viewCertificateBtn.style.display = certificateLink.value.trim() ? "inline-block" : "none";
-    viewCertificateBtn.href = certificateLink.value.trim();
-    certificateModal.style.display = "none";
-    alert("✅ Certificate link saved!");
-  });
-
-  closeCertificate.addEventListener("click", () => certificateModal.style.display = "none");
-
-  // === Final Report Modal ===
-  finalReportBtn.addEventListener("click", () => {
-    finalReportLink.value = localStorage.getItem("final_report_link") || "";
-    viewFinalReportBtn.style.display = finalReportLink.value ? "inline-block" : "none";
-    viewFinalReportBtn.href = finalReportLink.value;
-    finalReportModal.style.display = "flex";
-  });
-
-  saveFinalReportBtn.addEventListener("click", () => {
-    localStorage.setItem("final_report_link", finalReportLink.value.trim());
-    viewFinalReportBtn.style.display = finalReportLink.value.trim() ? "inline-block" : "none";
-    viewFinalReportBtn.href = finalReportLink.value.trim();
-    finalReportModal.style.display = "none";
-    alert("✅ Final Report link saved!");
-  });
-
-  closeFinalReport.addEventListener("click", () => finalReportModal.style.display = "none");
-
   // Progress Update
   function updateProgress() {
-    let completed = 0;
-    for (let i = 1; i <= 21; i++) {
-      if (localStorage.getItem(`report_day_${i}`) || reports[i]) completed++;
-    }
+    let completed = Object.keys(reports).length;
     progressBar.style.width = `${(completed / 21) * 100}%`;
     progressText.textContent = `${completed} / 30 Days Completed`;
   }
