@@ -82,6 +82,14 @@ Python is a beginner-friendly, high-level language widely used in AI, data scien
     19: {
       
       pdfLink: "day19Training.pdf"
+    },
+    20: {
+      
+      pdfLink: "day20Training.pdf"
+    },
+    21: {
+      
+      pdfLink: "day21Training.pdf"
     }
   };
 
