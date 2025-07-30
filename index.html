@@ -20,7 +20,7 @@
         <ul>
           <li><button id="homeBtn">🏠 Dashboard</button></li>
           <li><button id="certificateBtn">🎓 Certificate</button></li>
-          <li><button id="projectBtn">📁 Project</button></li>
+          <li><button id="finalReportBtn">📄 Final Report</button></li>
           <li><button id="toggleThemeBtn">🌙 Theme</button></li>
         </ul>
       </nav>
@@ -65,20 +65,15 @@
         <div class="modal-content">
           <span class="close-btn" id="closeModal">&times;</span>
           <h3 id="modalDayTitle">Day Report</h3>
-
           <p id="readOnlyMessage" style="display:none; color:#0f172a; font-weight:bold;">
             Reports are read-only on the live site.
           </p>
-
           <textarea id="reportTextarea" rows="10" placeholder="Write your daily summary here..."></textarea>
-          
           <label for="reportLink">Attach Report PDF Link:</label>
           <input type="text" id="reportLink" placeholder="https://...">
-
           <a id="viewReportBtn" href="#" target="_blank" class="modal-link-btn" style="display: none;">
             📄 View Attached PDF
           </a>
-
           <div class="modal-actions">
             <button id="saveReportBtn">✅ Save</button>
             <button id="downloadPdfBtn">📄 Download PDF</button>
@@ -86,37 +81,36 @@
         </div>
       </div>
 
+      <!-- Certificate Modal -->
+      <div class="modal" id="certificateModal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeCertificate">&times;</span>
+          <h3>Certificate</h3>
+          <label for="certificateLink">Attach Certificate PDF Link:</label>
+          <input type="text" id="certificateLink" placeholder="Paste certificate PDF link (https://...)" />
+          <a id="viewCertificateBtn" href="#" target="_blank" class="modal-link-btn" style="display: none;">📄 View Certificate</a>
+          <div class="modal-actions">
+            <button id="saveCertificateBtn">✅ Save</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Report Modal -->
+      <div class="modal" id="finalReportModal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeFinalReport">&times;</span>
+          <h3>Final Report</h3>
+          <label for="finalReportLink">Attach Final Report PDF Link:</label>
+          <input type="text" id="finalReportLink" placeholder="Paste final report PDF link (https://...)" />
+          <a id="viewFinalReportBtn" href="#" target="_blank" class="modal-link-btn" style="display: none;">📄 View Final Report</a>
+          <div class="modal-actions">
+            <button id="saveFinalReportBtn">✅ Save</button>
+          </div>
+        </div>
+      </div>
+
     </main>
   </div>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const isLocal =
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1";
-
-      if (!isLocal) {
-        // Hide editing controls
-        document.querySelectorAll(".modal-actions, #reportTextarea, #reportLink, label[for='reportLink']").forEach(el => {
-          el.style.display = "none";
-        });
-
-        // Show read-only message
-        const readOnlyMessage = document.getElementById("readOnlyMessage");
-        if (readOnlyMessage) {
-          readOnlyMessage.style.display = "block";
-        }
-
-        // Disable modal opening
-        document.querySelectorAll(".day-card").forEach(card => {
-          card.style.cursor = "default";
-          card.onclick = () => {
-            alert("Reports are read-only on the live site.");
-          };
-        });
-      }
-    });
-  </script>
 
   <script src="script.js"></script>
 </body>
