@@ -110,7 +110,7 @@ Python is a beginner-friendly, high-level language widely used in AI, data scien
   let currentDay = null;
 
   // Generate Day Cards
-  for (let i = 1; i <= 30; i++) {
+  for (let i = 1; i <= 21; i++) {
     const dayCard = document.createElement("div");
     dayCard.classList.add("day-card");
     dayCard.setAttribute("data-day", i);
