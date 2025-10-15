@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ✅ HARD CODED CERTIFICATE AND FINAL REPORT LINKS
   const certificateLinkFixed = "https://your-certificate-link.pdf";
-  const finalReportLinkFixed = "finalReport.pdf";
+  const finalReportLinkFixed = "Training_Report.docx";
 
   // DOM Elements
   const daysContainer = document.getElementById("daysGrid");
